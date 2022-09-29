@@ -1,0 +1,254 @@
+
+How to auto import laravel class in vs code 
+نذهب للاضاففة ونضيف 
+
+PHP Namespace Resolver
+-------------------------------------------------------
+عدد المقالات 
+{{ $sliders->count() }}
+-----------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=mCZ2Xk-AucY   => تعديل واضافة  لايرفل
+------------------------------------------------------------------------------------
+انشاء مشروع جديد
+composer create-project laravel/laravel newtest
+--------------------------------------------------------------------------------
+اتشفيل المشروع 
+php artisan serve
+
+---------------------------------------------------------------
+composer require livewire/livewire
+
+add <head>@livewireStyles
+add <body>   @livewireScripts
+--------------------------------
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+-----------------------------------------------------------------
+لانشاء صفحة التسجيل 
+
+composer require laravel/ui
+
+php artisan ui:auth
+
+add bootstrab  
+CDN
+bootstrab.css
+bootstrab.js
+jQuery.js
+intelephense.diagnostics.Undefined خطأ    vonder
+intelephense.diagnostics.undefinedMethods
+
+
+   <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+   
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+--------------------------------------------------------------
+1 - composer require laravel/ui
+
+2 - php artisan ui:auth
+
+3- Just delete this line app.blade.php, permanently delete (no comment)
+
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+------------------
+npm run build
+npm i laravel-mix
+-------------------------------------------------------------
+I managed to find the solution to this.
+
+remove the following line from "vite.config.js":
+'resources/css/app.css',
+
+include the following line in "app.js":
+import '../css/app.css';
+
+In your app.blade.php file, remove 'resources/css/app.css' from, you will be left with:
+@vite(['resources/js/app.js'])
+
+Now run: npm run build and your page will load.
+------------------------------------------------------------------------------------
+        لانشاء الجداول في قاعدة البيانات   
+php artisan migrate
+
+--------------------------
+
+اضافة حقل في قجدول قاعدة البيانات
+
+php artisan make:migration add_details_to_users_table
+-------------------------------------------------------------------------------------------
+لانشاء make:middleware  
+php artisan make:middleware AdminMiddleware
+------------------------------------------------------------------------------
+message
+
+ @if (session('message'))
+                            <h2>{{ session('message') }}</h2>
+                        @endif
+-------------------------------------------------------------------------
+
+php artisan make:migration create_brands_table
+php artisan make:migration create_categories_table
+php artisan make:migration create_products_table
+php artisan make:migration create_images_table
+php artisan make:migration create_colors_table
+php artisan make:migration create_product_colors_table
+php artisan make:migration create_sliders_table
+php artisan make:migration create_posts_table
+php artisan make:migration create_wishlists_table
+php artisan make:model Color
+php artisan make:model Wishlist
+php artisan make:model Slider
+php artisan make:model ProductColor
+php artisan make:model Product
+php artisan make:model Post
+php artisan make:model Category
+php artisan make:model Brand
+php artisan make:model ProductImage           HomeController
+php artisan make:controller Admin/PostController
+php artisan make:controller HomeController
+php artisan make:controller Admin/SliderController
+php artisan make:controller Admin/BrandController
+php artisan make:controller Admin/ColorController
+php artisan make:controller Admin/CategoryController
+php artisan make:controller Admin/ProductController
+php artisan make:controller Admin/DashboardController
+DashboardController
+php artisan make:request PostFormRequest
+php artisan make:request CategoryFormRequest
+php artisan make:request ProductFormRequest
+php artisan make:request ColorFormRequest
+php artisan make:request SliderFormRequest
+---------------------------------------------------------------------
+php artisan make:controller Frontend/FrontendController
+php artisan make:controller Frontend/WishlistController
+php artisan make:controller Frontend/CartController
+----------------------------------------------------------------------------
+Cart
+php artisan make:livewire Frontend/Cart/CartCount
+php artisan make:livewire Frontend/Cart/CartShow
+--------------------------------------------------------------------------
+ProductFormRequest
+------------------------------------------------------------------
+ php artisan make:migration add_category_id_to_brands_table
+-----------------------------------------------------------------
+str
+use Illuminate\Support\Str;
+
+--------------------------------------------------------------------------------
+php artisan make:controller MngedController
+php artisan make:livewire Mnged
+php artisan make:livewire Admin/Category/Index
+php artisan make:livewire Admin/Brand/Index
+php artisan make:livewire Admin/Product/Index
+php artisan make:livewire Admin/Product/Index
+php artisan make:livewire Admin/Product/View
+php artisan make:livewire Product/View
+php artisan make:livewire Frontend/Product/IndexMnged
+php artisan make:livewire Frontend/Product/View
+php artisan make:livewire Frontend/WishlistShow
+php artisan make:livewire Frontend/WishlistCount
+php artisan make:livewire Admin/Post/Index
+يوجد لدينا قطع غيار لكافة انواع الجوالات
+توصيل لجميع مناطق المملكة وضمان استرجاع
+php artisan make:migration create_carts_table
+php artisan make:model Cart
+------------------------------------------------------------------------------
+php artisan make:migration create_students_table
+
+php artisan make:model Student
+php artisan make:controller StudentController
+php artisan make:livewire Student
+php artisan make:livewire Student/Index
+php artisan make:livewire Mnged
+
+php artisan make:migration create_Manegars_table
+php artisan make:model Manegar
+php artisan make:controller ManegarController
+php artisan make:migration create_Manegers_table
+php artisan make:livewire Manegar/Index
+php artisan make:migration create_manegers_table
+
+php artisan make:livewire Admin/Slider/Index
+php artisan make:livewire Admin/Slider/Create
+php artisan make:livewire Frontend/Slider/Create
+
+0------------------------------------------------------
+
+php artisan make:livewire ContactForm
+php artisan make:model Message
+php artisan make:migration create_messages_table
+
+php artisan make:model Post
+php artisan make:livewire Posts
+php artisan make:migration create_images_table
+
+--------------------------------------------------------------
+مهم جدا
+Laravel 9 Livewire Wizard Multi Step Form Tutorial
+Laravel Livewire Dependant Dropdown Example
+---------------------------------------------------------------
+دورات 
+https://www.udemy.com/course/laravel-advance-ecommerce-project/
+https://www.udemy.com/course/laravel-build-complete-inventory-management-system/
+----------------------------------------------------------------------------------
+-------------------------------------------------------------
+
+jetstream profile photo not showing
+
+php artisan storage:link
+
+config/filesystems.php
+
+'url' => env('APP_URL,http://127.0.0.1:8000/').'/storage',
+
+
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+ $table->tinyInteger('role')->default('0')->comment('0=user,1=admin');
+add App/Htt[/providers/RouteServiceProvider.php
+ public const HOME = 'redirects';
+
+php artisan make:controller HomeController
+public function index()
+{
+    $role = Auth::user()->role;
+    if($role == '1')
+    {
+        return view('admin.dashboard');
+    }
+    else
+    {
+        return view('dashboard');
+    }
+
+}
+
+add rout
+Route::get('redirects', 'App\Http\Controllers\HomeController@index'  );
+---------------------------------------------------
+--------------------------------------------------------------------------------------
+git init
+git add .
+git remote add origin https://github.com/mnged/firest.git
+git commit -m "test me"
+git push origin master
+
+
+  git config --global user.email "mngedhesso@gmail.com"
+  git config --global user.name "mnged"   
+-----------------------------------------------------------------
+git init
+git add .
+git remote -v
+// git add index.html //
+git commit -m "add liveware"
+git pull
+git push
+
+
+
+
+
+
+
